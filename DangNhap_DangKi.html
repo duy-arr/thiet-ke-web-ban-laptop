@@ -1,0 +1,103 @@
+<html> <!-- Khai báo bắt đầu tài liệu HTML -->
+<head>
+    <!-- Import TailwindCSS từ CDN -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Kết nối thư viện Tailwind CSS qua CDN để sử dụng các tiện ích CSS nhanh chóng -->
+
+    <!-- Import Font Awesome để sử dụng biểu tượng -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> <!-- Kết nối Font Awesome để thêm các biểu tượng như LinkedIn, GitHub, Facebook -->
+
+    <!-- Import font chữ "Inter" từ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/> <!-- Sử dụng font chữ Inter cho giao diện -->
+    <style>
+        /* Áp dụng font chữ Inter cho toàn bộ trang */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex h-screen"> <!-- Tạo phần thân trang, sử dụng Flexbox để căn chỉnh nội dung dọc và ngang, chiều cao toàn màn hình -->
+    <!-- Chia giao diện làm hai phần bằng Flexbox -->
+
+    <!-- Phần trái: Video nền và nội dung giới thiệu -->
+    <div class="w-1/2 bg-black relative"> <!-- Phần chiếm nửa màn hình (50%), nền đen, vị trí tương đối để chứa các phần tử con -->
+        <!-- Video nền phủ toàn màn hình, tự phát, lặp lại và tắt tiếng -->
+        <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover opacity-50"> <!-- Video nền phủ kín khung, tự động phát, lặp lại, và giảm độ rõ bằng opacity -->
+            <source src="aa.mp4" type="video/mp4"> <!-- Đường dẫn đến video định dạng mp4 -->
+        </video>
+        
+        <!-- Nội dung nằm trên video -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white"> <!-- Nội dung hiển thị phía trước video, căn giữa dọc và ngang, chữ trắng -->
+            <!-- Logo -->
+            <!-- Tiêu đề chính -->
+            <h1 class="text-4xl font-bold">Chào mừng đến với</h1> <!-- Dòng đầu tiêu đề, chữ lớn và đậm -->
+            <h2 class="text-5xl font-bold">BEE ART</h2> <!-- Dòng thứ hai của tiêu đề với chữ lớn hơn -->
+            <!-- Mô tả -->
+            <p class="mt-4">Nơi giao thương các mặt hàng trên toàn nước</p> <!-- Đoạn mô tả nhỏ, cách tiêu đề trên 4 đơn vị -->
+            <!-- Liên kết tìm hiểu thêm -->
+            <a href="#" class="text-green-500 mt-2">Tìm hiểu thêm</a> <!-- Liên kết với màu xanh lá -->
+        </div>
+    </div>
+
+    <!-- Phần phải: Biểu mẫu đăng nhập -->
+    <div class="w-1/2 flex items-center justify-center bg-white"> <!-- Phần chiếm 50% màn hình, nền trắng, nội dung căn giữa -->
+        <div class="w-3/4"> <!-- Nội dung bên trong chiếm 75% chiều rộng của phần phải -->
+            <!-- Tiêu đề chào mừng -->
+            <h2 class="text-3xl font-bold mb-2">Chào mừng quý khách!</h2> <!-- Tiêu đề chính -->
+            <p class="text-lg mb-6">Đăng nhập vào tài khoản của bạn</p> <!-- Lời chào phụ -->
+            <p class="text-sm mb-6">Chúc bạn mua sắm vui vẻ!</p> <!-- Thông điệp thân thiện -->
+
+            <!-- Biểu mẫu đăng nhập -->
+            <form>
+                <!-- Trường email -->
+                <div class="mb-4"> <!-- Khoảng cách dưới trường -->
+                    <input type="email" placeholder="Email" class="w-full p-3 border rounded-md"/> <!-- Trường nhập email -->
+                </div>
+                <!-- Trường mật khẩu -->
+                <div class="mb-4"> <!-- Khoảng cách dưới trường -->
+                    <input type="password" placeholder="Mật khẩu" class="w-full p-3 border rounded-md"/> <!-- Trường nhập mật khẩu -->
+                </div>
+                <!-- Nút đăng nhập -->
+                <button class="w-full bg-blue-500 text-white p-3 rounded-md mb-4">Đăng nhập</button> <!-- Nút đăng nhập với màu nền xanh -->
+                
+                <!-- Tùy chọn ghi nhớ và quên mật khẩu -->
+                <div class="flex items-center justify-between mb-4"> <!-- Bố trí ghi nhớ và quên mật khẩu trên một dòng -->
+                    <label class="flex items-center">
+                        <input type="checkbox" class="mr-2"/> <!-- Checkbox ghi nhớ -->
+                        Ghi nhớ
+                    </label>
+                    <a href="#" class="text-blue-500">Quên mật khẩu?</a> <!-- Liên kết quên mật khẩu -->
+                </div>
+                
+                <!-- Thanh phân cách -->
+                <div class="flex items-center mb-4"> <!-- Đường kẻ ngang và chữ "hoặc" -->
+                    <hr class="flex-grow border-t border-gray-300"/> <!-- Đường kẻ -->
+                    <span class="mx-2 text-gray-500">hoặc</span> <!-- Văn bản giữa các đường -->
+                    <hr class="flex-grow border-t border-gray-300"/> <!-- Đường kẻ -->
+                </div>
+
+                <!-- Nút đăng nhập với Google -->
+                <button class="w-full bg-white border border-gray-300 text-gray-700 p-3 rounded-md flex items-center justify-center mb-4">
+                    <img src="images/logoGG.png" alt="Google logo" class="mr-2" width="20" height="20"/> <!-- Logo Google -->
+                    Đăng nhập với Google
+                </button>
+                
+                <!-- Nút đăng nhập với các mạng xã hội -->
+                <div class="flex justify-between">
+                    <button class="w-1/4 bg-white border border-gray-300 text-gray-700 p-3 rounded-md flex items-center justify-center">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+                    <button class="w-1/4 bg-white border border-gray-300 text-gray-700 p-3 rounded-md flex items-center justify-center">
+                        <i class="fab fa-tiktok"></i> 
+                    </button>
+                    <button class="w-1/4 bg-white border border-gray-300 text-gray-700 p-3 rounded-md flex items-center justify-center">
+                        <i class="fab fa-facebook-f"></i> <!-- Biểu tượng Facebook -->
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Liên kết đến trang đăng ký -->
+            <p class="text-center mt-6">Chưa có tài khoản? <a href="#" class="text-blue-500">Đăng ký</a></p> <!-- Liên kết dẫn tới trang đăng ký -->
+        </div>
+    </div>
+</body>
+</html>
